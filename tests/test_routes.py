@@ -12,13 +12,14 @@ from tests.factories import AccountFactory
 from service.common import status  # HTTP Status Codes
 from service.models import db, Account, init_db
 from service.routes import app
+# from service import talisman
 
 DATABASE_URI = os.getenv(
     "DATABASE_URI", "postgresql://postgres:postgres@localhost:5432/postgres"
 )
 
 BASE_URL = "/accounts"
-
+HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 
 ######################################################################
 #  T E S T   C A S E S
